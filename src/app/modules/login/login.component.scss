@@ -1,0 +1,7 @@
+.form-login {
+  @apply w-full flex flex-col p-6 flex-none lg:items-center lg:justify-center space-y-12
+}
+
+.footer-login {
+  @apply flex flex-row justify-between items-center px-6 w-full h-12 bg-white
+}

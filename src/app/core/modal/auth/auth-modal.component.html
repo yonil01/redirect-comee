@@ -1,0 +1,30 @@
+<div *ngIf="isOpen" class="options-system fixed top-0 left-0 w-full h-screen flex items-center justify-center" style="background: rgba(0,0,0,0.6); z-index: 20000">
+  <div class="modal space-y-6 drop-shadow-lg rounded border-mono-30 bg-white p-4 w-full md:w-2/3 lg:w-1/3">
+    <div class="flex items-center justify-center">
+      <span class="t-h5 text-brand-1">{{'START_OF_SESSION' | translate}}</span>
+    </div>
+    <form [formGroup]="form" id="form-login" class="space-y-4">
+      <div class="flex flex-col flex-1 space-y-1">
+        <label>{{ 'USERNAME' | translate}} ó {{ 'EMAIL' | translate}}</label>
+        <input formControlName="id" class="input-style" type="text">
+        <small class="text-alert-error" *ngIf="form.get('id')?.touched && form.get('id')?.invalid">
+          {{'USERNAME_OR_EMAIL_ARE_REQUIRED'|translate}}
+        </small>
+      </div>
+      <div class="flex flex-col flex-1 space-y-1">
+        <label>{{ 'PASSWORD' | translate}}</label>
+        <input formControlName="password" class="input-style" type="password">
+        <small class="text-alert-error"
+               *ngIf="form.get('password')?.touched && form.get('password')?.invalid">
+          {{'PASSWORD_IS_REQUIRED'|translate}}
+        </small>
+      </div>
+    </form>
+    <div class="flex flex-col space-y-4">
+      <button (click)="login()" form="form-login" class="b-solid">{{'ENTER' | translate}}</button>
+    </div>
+  </div>
+</div>
+
+<app-block-page [show]="isLoading"></app-block-page>
+<ec-toast [toastStyle]="toastStyle"></ec-toast>
