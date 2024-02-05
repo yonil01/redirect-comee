@@ -1,15 +1,15 @@
 import {OnInit, Component, OnDestroy} from '@angular/core';
-import {ModalService} from '@app/core/services/modal/modal.service';
 import {Subscription} from 'rxjs/internal/Subscription';
 import {FormGroup, Validators, FormBuilder} from '@angular/forms';
-import {AuthenticationService} from '@app/core/services/authentication/authentication.service';
-import {EnvService} from '@app/core/services/env/env.service';
-import {AppState} from '@app/core/store/app.reducers';
 import {Store} from '@ngrx/store';
-import {controlLogin} from '@app/core/store/actions/token.action';
 import {ToastService} from "ecapture-ng-ui";
-import {toastDataStyle} from "@app/modules/login/data/style/data.style";
 import {HttpErrorResponse} from "@angular/common/http";
+import {ModalService} from "../../services/modal/modal.service";
+import {AuthenticationService} from "../../services/authentication/authentication.service";
+import {EnvService} from "../../services/env/env.service";
+import {AppState} from "../../store/app.reducers";
+import {controlLogin} from "../../store/actions/token.action";
+import {toastDataStyle} from "../../../modules/login/data/style/data.style";
 
 @Component({
   selector: 'app-auth-modal',
@@ -59,7 +59,7 @@ export class AuthModalComponent implements OnInit, OnDestroy {
     this.isLoading = true;
     this._subscription.add(
       this._authenticationService.login(this.form.value).subscribe({
-        next: (resp) => {
+        next: (resp: any) => {
           if (resp.error) {
             this._messageService.add({type: 'error', message: resp.msg, life: 5000});
           } else {

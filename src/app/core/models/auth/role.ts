@@ -1,4 +1,4 @@
-import {Attribute, DocType, Element, Entities, Project} from "@app/core/models";
+import {Attribute, DocType, Element, Entities, Project} from "../../models";
 
 export interface Role {
   id: string;

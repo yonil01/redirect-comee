@@ -1,4 +1,4 @@
-import {DocTypeGroups} from "@app/core/models";
+import {DocTypeGroups} from "../../../models";
 
 export interface Customer {
   id?: string;

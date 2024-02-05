@@ -1,5 +1,5 @@
 import { Project } from '../models/index';
-import {Entities} from "@app/core/models";
+import {Entities} from "../../../models";
 
 export interface EntitiesAttributesDataset {
   id?: string;

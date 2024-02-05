@@ -1,4 +1,4 @@
-import {Attribute} from "@app/core/models";
+import {Attribute} from "../../../models";
 
 export interface Autofills {
   id: string;

@@ -1,7 +1,5 @@
-import {Project, Dataset} from '@app/core/models';
-import {
-  AttributeAutofill
-} from "@app/core/components/dynamic-form-viewer/models";
+import {Project, Dataset} from "../index";
+import {AttributeAutofill} from "../../components/dynamic-form-viewer/models";
 
 export interface Entities {
   id: string;

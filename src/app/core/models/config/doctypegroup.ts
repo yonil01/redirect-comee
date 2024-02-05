@@ -1,6 +1,6 @@
-import { Project } from '@app/core/models';
+import { Project } from '../../models';
 import { Entities } from './entities';
-import {Required} from "@app/core/models/annexe/annexe";
+import {Required} from "../../models/annexe/annexe";
 
 export interface DocTypeGroups {
   id: string;

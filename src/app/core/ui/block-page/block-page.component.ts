@@ -8,7 +8,7 @@ import {
   SimpleChanges,
   ViewChild
 } from '@angular/core';
-import {BlockPageService} from "@app/core/ui/block-page/block-page.service";
+import {BlockPageService} from "../block-page/block-page.service";
 
 @Component({
   selector: 'app-block-page',
@@ -44,7 +44,7 @@ export class BlockPageComponent implements OnInit, AfterViewInit, OnChanges, OnD
     }
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
+  ngOnChanges(changes: any): void {
     if (changes.show && !changes.show.firstChange) {
       this.show = changes.show.currentValue;
       this.manageBlockPage();

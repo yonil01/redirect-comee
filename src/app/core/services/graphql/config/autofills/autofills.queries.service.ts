@@ -7,6 +7,7 @@ import { Response } from '@app/core/models';
   providedIn: 'root',
 })
 export class GetAutofillsQuery extends Query<Response> {
+  // @ts-ignore
   document = gql`
     query getAutofills {
       getAutofills {

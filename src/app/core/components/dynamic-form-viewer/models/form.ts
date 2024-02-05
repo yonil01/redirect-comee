@@ -1,4 +1,4 @@
-import {Attribute, Entities} from "@app/core/models";
+import {Attribute, Entities} from "../../../models";
 
 export interface Formly {
   type: string; // form or steps

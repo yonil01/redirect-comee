@@ -6,6 +6,7 @@ import gql from 'graphql-tag';
   providedIn: 'root',
 })
 export class GetModulesQuery extends Query<Response> {
+  // @ts-ignore
   document = gql`
     query getModules {
       getModules {
@@ -42,6 +43,7 @@ export class GetModulesQuery extends Query<Response> {
   providedIn: 'root',
 })
 export class GetModulesByRoleQuery extends Query<Response> {
+ // @ts-ignore
   document = gql`
     query getModulesByRole($ids: [ID!]!, $type: Int!) {
       getModulesByRole(ids: $ids, type: $type) {

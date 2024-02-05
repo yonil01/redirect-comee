@@ -1,4 +1,4 @@
-import {DocType, Entities} from "@app/core/models";
+import {DocType, Entities} from "../../../models";
 
 export interface Document {
   id?: string;

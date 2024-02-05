@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Formly, FunctionsDefinition} from '../../models/index';
 import {GraphqlService} from '../graphql/graphql.service';
-import {Attribute} from "@app/core/models";
+import {Attribute} from "../../../../models";
 
 @Injectable({
   providedIn: 'root',
@@ -74,7 +74,7 @@ export class FormlyFunctionsService {
                 }
               });
           } else if (sequence > 1 && sequence) {
-            const fieldBefore = functionsDef.entity?.attributes?.find((a) => a.entities_attributes_cascading_dataset?.sequence === sequence - 1);
+            const fieldBefore = functionsDef.entity?.attributes?.find((a: any) => a.entities_attributes_cascading_dataset?.sequence === sequence - 1);
             field.form.get(fieldBefore?.id).statusChanges.subscribe((valu: any) => {
               if (valu) {
                 attributeIdValue = fieldBefore?.id?.toLowerCase() || '';
@@ -114,10 +114,10 @@ export class FormlyFunctionsService {
             if (field.form.get(functionsDef.attribute?.id).pristine) {
               return;
             }
-            const fieldsSearchAtt: Attribute[] = functionsDef.entity?.attributes?.filter((att) => att.entities_attributes_autofills?.is_search) || [];
+            const fieldsSearchAtt: Attribute[] = functionsDef.entity?.attributes?.filter((att: any) => att.entities_attributes_autofills?.is_search) || [];
             const fieldsSearch: string[] = fieldsSearchAtt.map((att) => att.id || '') || [];
 
-            const fieldsAutofillAtt: Attribute[] = functionsDef.entity?.attributes?.filter((att) => att.entities_attributes_autofills && !att.entities_attributes_autofills.is_search) || [];
+            const fieldsAutofillAtt: Attribute[] = functionsDef.entity?.attributes?.filter((att: any) => att.entities_attributes_autofills && !att.entities_attributes_autofills.is_search) || [];
             const fieldsAutofill: string[] = fieldsAutofillAtt.map((att) => att.id || '') || [];
             const dates: any = {};
             let isDates = true;
